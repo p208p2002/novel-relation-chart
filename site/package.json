@@ -10,7 +10,9 @@
     "github-fork-ribbon-css": "^0.2.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "three": "^0.114.0",
+    "three-spritetext": "^1.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

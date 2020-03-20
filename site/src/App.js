@@ -32,7 +32,7 @@ export class App extends Component {
 
   render() {
     let{ isMobile } = this.state
-    let ChartViewHeight = isMobile?parseInt(window.screen.height*0.4).toString()+"px":'500px'
+    let ChartViewHeight = isMobile?parseInt(window.screen.height*0.65).toString()+"px":'550px'
 
     return (
       <div>
