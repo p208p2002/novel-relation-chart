@@ -52,6 +52,15 @@ export class App extends Component {
           </div>
         </div>
         <ChartView width="100%" height={ChartViewHeight} />
+        <footer className="text-center" style={{
+          width:'100%',
+          position:'absolute',
+          bottom:0,
+          color:'rgba(0,0,0,0.7)',
+          backgroundColor:'rgba(255,255,255,0.35)'
+        }}>
+          2020 社群網路與運算
+        </footer>
       </div>
     )
   }

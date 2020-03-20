@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dbd23d2fac1e4539d6e15e405b318c8d",
+    "revision": "fd99fc485b5b269461fa9cf0d251dfad",
     "url": "https://p208p2002.github.io/novel-relation-chart/index.html"
   },
   {
-    "revision": "5d9e4b72518185159ba2",
-    "url": "https://p208p2002.github.io/novel-relation-chart/static/css/main.bb2bb96f.chunk.css"
+    "revision": "c902511a7bfe4a11ffa1",
+    "url": "https://p208p2002.github.io/novel-relation-chart/static/css/main.493996ab.chunk.css"
   },
   {
     "revision": "4ede60de33d12c9e3305",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://p208p2002.github.io/novel-relation-chart/static/js/2.455d3750.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5d9e4b72518185159ba2",
-    "url": "https://p208p2002.github.io/novel-relation-chart/static/js/main.cb6de3a2.chunk.js"
+    "revision": "c902511a7bfe4a11ffa1",
+    "url": "https://p208p2002.github.io/novel-relation-chart/static/js/main.1b9c6fcf.chunk.js"
   },
   {
     "revision": "8dc04c497f0e25e55a9b",
