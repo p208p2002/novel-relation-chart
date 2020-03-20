@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import ChartView from './modules/chartModules'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.Graph = undefined
+  }
+  render() {
+    return (
+      <div className="container">
+        <br/>
+        <div className="text-center">
+          <img 
+            style={{maxWidth:'550px',width:'100%'}}
+            src={require("./assets/imgs/logo.png")} 
+            alt="絕代雙驕人物關係圖"
+            srcset="" />
+          <br />
+          <br />
+        </div>
+        <ChartView width="100%" height="500px" />
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
