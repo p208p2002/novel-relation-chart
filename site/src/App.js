@@ -10,6 +10,14 @@ export class App extends Component {
     }
   }
 
+  componentDidMount(){
+    window.addEventListener('resize',()=>{
+      setTimeout(()=>{
+        window.location.reload()
+      },200)
+    });
+  }
+
   componentWillMount(){
     let isMobile = function() {
       var check = false;
@@ -38,7 +46,7 @@ export class App extends Component {
               style={{ maxWidth: '550px', width: '100%' }}
               src={require("./assets/imgs/logo.png")}
               alt="絕代雙驕人物關係圖"
-              srcset="" />
+              srcSet="" />
             <br />
             <br />
           </div>
