@@ -40,7 +40,7 @@ export class Index extends Component {
         .graphData(chartData)
         .linkWidth((link)=>{
           console.log(link)
-          return Math.floor(Math.random() * 3) + 1
+          return link.value
         })
         .nodeAutoColorBy('group')
         .nodeThreeObject(node => {
