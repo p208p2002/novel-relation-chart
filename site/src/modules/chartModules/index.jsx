@@ -38,11 +38,29 @@ export class Index extends Component {
         .width(width)
         .height(height)
         .graphData(chartData)
+        .linkOpacity(0.18)
         .linkWidth((link)=>{
-          console.log(link)
-          return link.value
+          // console.log(link)
+          // return 1
+          return 1+link.value/15
         })
-        .nodeAutoColorBy('group')
+        .linkThreeObjectExtend(true)
+        .linkThreeObject(link => {
+          // extend link with text sprite
+          const sprite = new SpriteText(`${link.source} > ${link.target} (${link.value})`);
+          sprite.color = 'lightgrey';
+          sprite.textHeight = 3;
+          return sprite;
+        })
+        .linkPositionUpdate((sprite, { start, end }) => {
+          const middlePos = Object.assign(...['x', 'y', 'z'].map(c => ({
+            [c]: start[c] + (end[c] - start[c]) / 2 // calc middle point
+          })));
+
+          // Position sprite
+          Object.assign(sprite.position, middlePos);
+        })
+        .nodeAutoColorBy('id')
         .nodeThreeObject(node => {
           // use a sphere as a drag handle
           const obj = new THREE.Mesh(
@@ -53,14 +71,14 @@ export class Index extends Component {
           // add text sprite as child
           const sprite = new SpriteText(node.id);
           sprite.color = node.color;
-          sprite.textHeight = 8;
+          sprite.textHeight = 25;
           obj.add(sprite);
 
           return obj;
         });
 
     // Spread nodes a little wider
-    Graph.d3Force('charge').strength(-300);
+    Graph.d3Force('charge').strength(-3000);
   }
   render() {
     return (
