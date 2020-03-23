@@ -34,7 +34,7 @@ export class App extends Component {
   render() {
     let { isMobile } = this.state
     let mobileHeight = parseInt(window.screen.height * 0.65).toString() + "px"
-    let deskTopHeight = parseInt(window.screen.height * 0.6).toString() + "px"
+    let deskTopHeight = "550px"
     let ChartViewHeight = isMobile ? mobileHeight : deskTopHeight
 
     var parsed = parse(window.location.href);
@@ -89,7 +89,7 @@ export class App extends Component {
           </div>
         ) : (
             <div style={{ overflow: 'hidden', display: 'block' }}>
-              <ChartView width="100%" height="100%" />
+              <ChartView width="100%" height="100%" fullMode={fullMode}/>
             </div>
           )}
       </div>
