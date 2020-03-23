@@ -33,8 +33,9 @@ export class Index extends Component {
 
     var width = document.getElementById('3d-graph').offsetWidth
     var height = document.getElementById('3d-graph').offsetHeight
+    const elem = document.getElementById('3d-graph');
     const Graph = ForceGraph3D()
-      (document.getElementById('3d-graph'))
+      (elem)
         .width(width)
         .height(height)
         .graphData(chartData)
@@ -49,6 +50,7 @@ export class Index extends Component {
           // extend link with text sprite
           const sprite = new SpriteText(`${link.source} > ${link.target} (${link.value})`);
           sprite.color = 'lightgrey';
+          sprite.fontSize = 50
           sprite.textHeight = 3;
           return sprite;
         })
@@ -61,6 +63,19 @@ export class Index extends Component {
           Object.assign(sprite.position, middlePos);
         })
         .nodeAutoColorBy('id')
+        .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
+        .onNodeClick(node => {
+          console.log('click')
+          // Aim at node from outside it
+          const distance = 40;
+          const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+
+          Graph.cameraPosition(
+            { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+            node, // lookAt ({ x, y, z })
+            3000  // ms transition duration
+          );
+        })
         .nodeThreeObject(node => {
           // use a sphere as a drag handle
           const obj = new THREE.Mesh(
