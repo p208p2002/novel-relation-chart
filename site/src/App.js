@@ -64,23 +64,25 @@ export class App extends Component {
             </div>
             <ChartView width="100%" height={ChartViewHeight} />
             <div className="text-center">
-            <button
-              className="btn"
-              style={{
-                marginTop:'5px',
-                backgroundColor:'rgba(255,255,255,0.6)'
-              }}
-              onClick={() => {
-                window.open(window.location.href + '?mode=full')
-              }}
-            >全螢幕
-            <img style={{ marginTop: '-4px', marginLeft: '3px' }} src={require('./assets/imgs/fullscreen.svg')} alt=""/>
-            </button>
+              <button
+                className="btn"
+                style={{
+                  marginTop: '5px',
+                  backgroundColor: 'rgba(255,255,255,0.6)'
+                }}
+                onClick={() => {
+                  window.open(window.location.href + '?mode=full')
+                }}
+              >全螢幕
+                <img style={{ marginTop: '-4px', marginLeft: '3px' }} src={require('./assets/imgs/fullscreen.svg')} alt="" />
+              </button>
+              <br />
+              <br/>
+              <img src={require('./assets/imgs/DegreeDistribution.png')} width="40%" alt="" srcset="" />
             </div>
+            <br/>
             <footer className="text-center" style={{
               width: '100%',
-              position: 'absolute',
-              bottom: 0,
               color: 'rgba(0,0,0,0.7)',
               backgroundColor: 'rgba(255,255,255,0.35)'
             }}>
@@ -88,9 +90,7 @@ export class App extends Component {
         </footer>
           </div>
         ) : (
-            <div style={{ overflow: 'hidden', display: 'block' }}>
-              <ChartView width="100%" height="100%" fullMode={fullMode}/>
-            </div>
+            <ChartView width="100%" height="100%" fullMode={fullMode} />
           )}
       </div>
     )
