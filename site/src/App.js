@@ -145,7 +145,7 @@ export class App extends Component {
                     <tr>
                       <th scope="row">3</th>
                       <td>鐵心蘭</td>
-                      <td>12</td>
+                      <td>0.6190</td>
                     </tr>
                     <tr>
                       <th scope="row">4</th>
