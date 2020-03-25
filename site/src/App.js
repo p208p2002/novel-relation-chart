@@ -63,12 +63,12 @@ export class App extends Component {
               </div>
             </div>
             <ChartView width="100%" height={ChartViewHeight} />
-            <div className="text-center">
+            <div className="text-center container">
               <button
                 className="btn"
                 style={{
                   marginTop: '5px',
-                  backgroundColor: 'rgba(255,255,255,0.6)'
+                  backgroundColor: 'rgba(255,255,255,0.7)'
                 }}
                 onClick={() => {
                   window.open(window.location.href + '?mode=full')
@@ -77,10 +77,56 @@ export class App extends Component {
                 <img style={{ marginTop: '-4px', marginLeft: '3px' }} src={require('./assets/imgs/fullscreen.svg')} alt="" />
               </button>
               <br />
-              <br/>
-              <img src={require('./assets/imgs/DegreeDistribution.png')} width="40%" alt="" srcset="" />
+              <br />
+
+              <div className="rwd-component" style={{ margin: '0 auto' }}>
+                <table className="table table-striped table-bordered novel-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">項目</th>
+                      <th scope="col">數值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Nodes</td>
+                      <td>61</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Edges</td>
+                      <td>328</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Average degree</td>
+                      <td>12</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>Diameter</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>Transitivity</td>
+                      <td>0.7093</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <small style={{ top: '-10px', position: 'relative' }} className="text-bg">Dataset Statistics</small>
+                <br />
+                <br />
+              </div>
+              <img
+                className="img-thumbnail img-fluid rwd-component"
+                src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcset="" />
+              <br />
+              <small className="text-bg">Degree Distribution</small>
             </div>
-            <br/>
+            <br />
             <footer className="text-center" style={{
               width: '100%',
               color: 'rgba(0,0,0,0.7)',
