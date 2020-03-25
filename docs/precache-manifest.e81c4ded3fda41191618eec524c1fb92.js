@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e475f7f2b865b55a75eb09920b9ca77c",
+    "revision": "896b34be7e577be537b8a5cb2f211c3e",
     "url": "https://p208p2002.github.io/novel-relation-chart/index.html"
   },
   {
