@@ -13,11 +13,11 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => {
-      setTimeout(() => {
-        window.location.reload()
-      }, 200)
-    });
+    // window.addEventListener('resize', () => {
+    //   setTimeout(() => {
+    //     window.location.reload()
+    //   }, 200)
+    // });
   }
 
   componentWillMount() {
@@ -119,7 +119,6 @@ export class App extends Component {
                   </tbody>
                 </table>
                 <br />
-                <br />
               </div>
               <div data-tip="與其他節點距離度量" className="rwd-component" style={{ margin: '0 auto' }}>
                 <p style={{ top: '10px', position: 'relative' }} className="text-bg">Closeness Centrality</p>
@@ -160,7 +159,6 @@ export class App extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <br />
                 <br />
               </div>
               <div className="rwd-component" style={{margin:'0 auto'}}>
