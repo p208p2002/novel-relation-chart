@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ChartView from './modules/chartModules'
 import './App.css'
+import ReactTooltip from 'react-tooltip'
 var parse = require('url-parse')
 export class App extends Component {
   constructor(props) {
@@ -80,6 +81,7 @@ export class App extends Component {
               <br />
 
               <div className="rwd-component" style={{ margin: '0 auto' }}>
+                <p style={{ top: '10px', position: 'relative' }} className="text-bg">Dataset Statistics</p>
                 <table className="table table-striped table-bordered novel-table">
                   <thead>
                     <tr>
@@ -89,42 +91,85 @@ export class App extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr data-tip="節點數量">
                       <th scope="row">1</th>
                       <td>Nodes</td>
                       <td>61</td>
                     </tr>
-                    <tr>
+                    <tr data-tip="連接邊數">
                       <th scope="row">2</th>
                       <td>Edges</td>
                       <td>328</td>
                     </tr>
-                    <tr>
+                    <tr data-tip="任一故事人物平均存在與12個人的關係">
                       <th scope="row">3</th>
                       <td>Average degree</td>
                       <td>12</td>
                     </tr>
-                    <tr>
+                    <tr data-tip="任一個故事人物之間最長為3個人的距離">
                       <th scope="row">4</th>
                       <td>Diameter</td>
                       <td>3</td>
                     </tr>
-                    <tr>
+                    <tr data-tip="有70%機率故事中任一位人物的朋友之間也是朋友整個故事劇情中出現的人物可能幾乎都互相認識">
                       <th scope="row">5</th>
                       <td>Transitivity</td>
                       <td>0.7093</td>
                     </tr>
                   </tbody>
                 </table>
-                <small style={{ top: '-10px', position: 'relative' }} className="text-bg">Dataset Statistics</small>
                 <br />
                 <br />
               </div>
-              <img
-                className="img-thumbnail img-fluid rwd-component"
-                src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcset="" />
+              <div data-tip="與其他節點距離度量" className="rwd-component" style={{ margin: '0 auto' }}>
+                <p style={{ top: '10px', position: 'relative' }} className="text-bg">Closeness Centrality</p>
+                <table
+                  className="table table-striped table-bordered novel-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">節點</th>
+                      <th scope="col">數值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>小魚兒</td>
+                      <td>0.8966</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>燕南天</td>
+                      <td>0.6420</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>鐵心蘭</td>
+                      <td>12</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td>軒轅三光</td>
+                      <td>0.5977</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td>江玉郎</td>
+                      <td>0.5977</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br />
+                <br />
+              </div>
+              <div className="rwd-component" style={{margin:'0 auto'}}>
+                <p style={{ top: '10px', position: 'relative' }} className="text-bg">Degree Distribution</p>
+                <img
+                  className="img-thumbnail img-fluid"
+                  src={require('./assets/imgs/DegreeDistribution.png')} width="100%" alt="" srcset="" />
+              </div>
               <br />
-              <small className="text-bg">Degree Distribution</small>
             </div>
             <br />
             <footer className="text-center" style={{
@@ -133,7 +178,8 @@ export class App extends Component {
               backgroundColor: 'rgba(255,255,255,0.35)'
             }}>
               2020 社群網路與運算
-        </footer>
+            </footer>
+            <ReactTooltip />
           </div>
         ) : (
             <ChartView width="100%" height="100%" fullMode={fullMode} />
